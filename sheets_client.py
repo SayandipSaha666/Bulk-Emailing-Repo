@@ -1,10 +1,13 @@
 """
 sheets_client.py
-Uses the SAME OAuth credentials as Gmail (one login covers both).
-No service account key file needed.
+Uses OAuth (shared with Gmail) instead of a service account.
+Handles all read/write interaction with the Google Sheet, plus grouping
+rows into companies to handle merged Company Name cells and multiple
+HR emails per row/group.
 """
 
 import os
+import re
 import gspread
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -27,10 +30,65 @@ def get_google_credentials(credentials_file: str):
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(credentials_file, SCOPES)
-            creds = flow.run_local_server(port=0)  # opens browser once
+            creds = flow.run_local_server(port=0)
         with open(TOKEN_FILE, "w") as f:
             f.write(creds.to_json())
     return creds
+
+
+def split_emails(raw: str):
+    """Splits a cell's email content on comma, semicolon, or newline."""
+    if not raw:
+        return []
+    parts = re.split(r'[,;\n]+', raw)
+    return [p.strip().strip('"').strip("'") for p in parts if p.strip()]
+
+
+def group_rows_by_company(rows, cols):
+    """
+    Forward-fills company name for blank rows (merged cell behavior),
+    and aggregates HR names/emails/status/summary across all rows
+    belonging to the same company.
+    """
+    groups = []
+    current = None
+
+    for row in rows:
+        raw_company = row.get(cols["company_name"], "").strip()
+
+        if raw_company:
+            current = {
+                "company_name": raw_company,
+                "row_numbers": [],
+                "hr_names": [],
+                "hr_emails": [],
+                "status_values": [],
+                "existing_summary": "",
+            }
+            groups.append(current)
+
+        if current is None:
+            continue
+
+        current["row_numbers"].append(row["_row_number"])
+
+        hr_name = row.get(cols["hr_name"], "").strip()
+        if hr_name and hr_name not in current["hr_names"]:
+            current["hr_names"].append(hr_name)
+
+        raw_emails = row.get(cols["hr_email"], "")
+        for email in split_emails(raw_emails):
+            if email not in current["hr_emails"]:
+                current["hr_emails"].append(email)
+
+        current["status_values"].append(row.get(cols["status"], "").strip().lower())
+
+        # Capture existing summary from whichever row actually has it non-empty
+        existing = row.get(cols["personalized_summary"], "").strip()
+        if existing and not current["existing_summary"]:
+            current["existing_summary"] = existing
+
+    return groups
 
 
 class SheetsClient:
@@ -46,7 +104,7 @@ class SheetsClient:
     def _ensure_status_columns_exist(self):
         header = self.worksheet.row_values(1)
         updated = False
-        for key in ("status", "sent_at", "error_reason"):
+        for key in ("status", "sent_at", "error_reason", "personalized_summary"):
             col_name = self.columns[key]
             if col_name not in header:
                 header.append(col_name)
@@ -71,3 +129,7 @@ class SheetsClient:
             self.worksheet.update_cell(row_number, sent_at_col, sent_at)
         error_col = self.header.index(self.columns["error_reason"]) + 1
         self.worksheet.update_cell(row_number, error_col, error_reason)
+
+    def update_personalized_summary(self, row_number: int, summary: str):
+        col = self.header.index(self.columns["personalized_summary"]) + 1
+        self.worksheet.update_cell(row_number, col, summary)

@@ -1,0 +1,3 @@
+C:\Users\BCT-REN-2026-08-025\Desktop\CODING\Personal\Emailing\readme.md
+C:\Users\BCT-REN-2026-08-025\Desktop\CODING\Personal\Emailing\requirements.txt
+C:\Users\BCT-REN-2026-08-025\Desktop\CODING\Personal\Emailing\templates\email_template.txt

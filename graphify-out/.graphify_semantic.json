@@ -1,0 +1,627 @@
+{
+  "nodes": [
+    {
+      "id": "readme_bulk_hr_outreach_automation",
+      "label": "Bulk HR Outreach Automation",
+      "file_type": "document",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_sheet_format",
+      "label": "Sheet format expected",
+      "file_type": "document",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_design_notes",
+      "label": "Design notes",
+      "file_type": "document",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_rate_limiting",
+      "label": "Rate limiting via delay_between_emails_sec",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_idempotent_design",
+      "label": "Idempotent: status written per row",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_personalization_fallback",
+      "label": "Personalization fallback on failure",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_compliance",
+      "label": "Compliance: SPF/DKIM, CAN-SPAM/GDPR",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "requirements_dependencies",
+      "label": "Python dependencies",
+      "file_type": "document",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "requirements_gspread",
+      "label": "gspread 6.1.2",
+      "file_type": "code",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "requirements_google_auth",
+      "label": "google-auth 2.32.0",
+      "file_type": "code",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "requirements_google_auth_oauthlib",
+      "label": "google-auth-oauthlib 1.2.1",
+      "file_type": "code",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "requirements_google_auth_httplib2",
+      "label": "google-auth-httplib2 0.2.0",
+      "file_type": "code",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "requirements_google_api_python_client",
+      "label": "google-api-python-client 2.140.0",
+      "file_type": "code",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "requirements_groq",
+      "label": "groq 0.11.0",
+      "file_type": "code",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "requirements_httpx",
+      "label": "httpx 0.27.2",
+      "file_type": "code",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "requirements_duckduckgo_search",
+      "label": "duckduckgo-search 6.2.13",
+      "file_type": "code",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "requirements_pyyaml",
+      "label": "PyYAML 6.0.2",
+      "file_type": "code",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "requirements_python_dotenv",
+      "label": "python-dotenv 1.0.1",
+      "file_type": "code",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "templates_email_template",
+      "label": "JGEC Campus Recruitment Email Template",
+      "file_type": "document",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\templates\\email_template.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "templates_company_name_placeholder",
+      "label": "{company_name} placeholder",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\templates\\email_template.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "templates_personalized_summary_placeholder",
+      "label": "{personalized_summary} placeholder",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\templates\\email_template.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "templates_sender_name_placeholder",
+      "label": "{sender_name} placeholder",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\templates\\email_template.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_google_sheets_integration",
+      "label": "Google Sheets integration setup",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_gmail_smtp",
+      "label": "Gmail SMTP with App Password",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_anthropic_api",
+      "label": "Anthropic API key required",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "readme_bulk_hr_outreach_automation",
+      "target": "readme_sheet_format",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_bulk_hr_outreach_automation",
+      "target": "readme_design_notes",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_bulk_hr_outreach_automation",
+      "target": "templates_email_template",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_bulk_hr_outreach_automation",
+      "target": "requirements_dependencies",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_design_notes",
+      "target": "readme_rate_limiting",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_design_notes",
+      "target": "readme_idempotent_design",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_design_notes",
+      "target": "readme_personalization_fallback",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_design_notes",
+      "target": "readme_compliance",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "templates_email_template",
+      "target": "templates_company_name_placeholder",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\templates\\email_template.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "templates_email_template",
+      "target": "templates_personalized_summary_placeholder",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\templates\\email_template.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "templates_email_template",
+      "target": "templates_sender_name_placeholder",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\templates\\email_template.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "templates_personalized_summary_placeholder",
+      "target": "readme_bulk_hr_outreach_automation",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\templates\\email_template.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "requirements_dependencies",
+      "target": "requirements_gspread",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "requirements_dependencies",
+      "target": "requirements_google_auth",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "requirements_dependencies",
+      "target": "requirements_google_auth_oauthlib",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "requirements_dependencies",
+      "target": "requirements_google_auth_httplib2",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "requirements_dependencies",
+      "target": "requirements_google_api_python_client",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "requirements_dependencies",
+      "target": "requirements_groq",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "requirements_dependencies",
+      "target": "requirements_httpx",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "requirements_dependencies",
+      "target": "requirements_duckduckgo_search",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "requirements_dependencies",
+      "target": "requirements_pyyaml",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "requirements_dependencies",
+      "target": "requirements_python_dotenv",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_sheet_format",
+      "target": "requirements_gspread",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_google_sheets_integration",
+      "target": "requirements_gspread",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_google_sheets_integration",
+      "target": "requirements_google_auth",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_gmail_smtp",
+      "target": "requirements_python_dotenv",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_anthropic_api",
+      "target": "requirements_groq",
+      "relation": "semantically_similar_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.25,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "weight": 0.5
+    },
+    {
+      "source": "readme_bulk_hr_outreach_automation",
+      "target": "requirements_duckduckgo_search",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_bulk_hr_outreach_automation",
+      "target": "requirements_httpx",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "readme_bulk_hr_outreach_automation",
+      "target": "requirements_pyyaml",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_rate_limiting",
+      "target": "readme_idempotent_design",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md",
+      "source_location": null,
+      "weight": 0.8
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "hr_outreach_pipeline",
+      "label": "HR Outreach Pipeline",
+      "nodes": [
+        "readme_bulk_hr_outreach_automation",
+        "templates_email_template",
+        "readme_sheet_format",
+        "readme_rate_limiting",
+        "readme_idempotent_design",
+        "readme_personalization_fallback",
+        "readme_compliance"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\readme.md"
+    },
+    {
+      "id": "google_sheets_stack",
+      "label": "Google Sheets dependency stack",
+      "nodes": [
+        "requirements_gspread",
+        "requirements_google_auth",
+        "requirements_google_auth_oauthlib",
+        "requirements_google_auth_httplib2",
+        "requirements_google_api_python_client"
+      ],
+      "relation": "implement",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\BCT-REN-2026-08-025\\Desktop\\CODING\\Personal\\Emailing\\requirements.txt"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

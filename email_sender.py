@@ -1,10 +1,7 @@
 """
 email_sender.py
-Builds and sends the email via SMTP, with explicit CC addresses attached
-to every message.
-
-Note on Gmail: you need an "App Password" (not your normal password) if
-2FA is enabled — generate one at https://myaccount.google.com/apppasswords
+Builds and sends the email via SMTP as HTML (for bold/highlighted text),
+supporting multiple TO recipients and explicit CC addresses.
 """
 
 import os
@@ -24,13 +21,13 @@ class EmailSender:
         self.subject_template = email_cfg["subject_template"]
         self.password = os.environ["EMAIL_APP_PASSWORD"]
 
-        with open(email_cfg["template_file"], "r") as f:
+        with open(email_cfg["template_file"], "r", encoding="utf-8") as f:
             self.template = f.read()
 
-    def build_message(self, to_email: str, hr_name: str, company_name: str,
+    def build_message(self, to_emails: list, hr_name: str, company_name: str,
                        personalized_summary: str) -> MIMEMultipart:
         subject = self.subject_template.format(company_name=company_name)
-        body = self.template.format(
+        html_body = self.template.format(
             hr_name=hr_name or "there",
             company_name=company_name,
             personalized_summary=personalized_summary,
@@ -39,14 +36,14 @@ class EmailSender:
 
         msg = MIMEMultipart()
         msg["From"] = f"{self.sender_name} <{self.sender_email}>"
-        msg["To"] = to_email
-        msg["Cc"] = ", ".join(self.cc_emails)   # explicit CC, visible to all recipients
+        msg["To"] = ", ".join(to_emails)
+        msg["Cc"] = ", ".join(self.cc_emails)
         msg["Subject"] = subject
-        msg.attach(MIMEText(body, "plain"))
+        msg.attach(MIMEText(html_body, "html", "utf-8"))   # "html" instead of "plain"
         return msg
 
-    def send(self, msg: MIMEMultipart, to_email: str):
-        all_recipients = [to_email] + self.cc_emails
+    def send(self, msg: MIMEMultipart, to_emails: list):
+        all_recipients = to_emails + self.cc_emails
         with smtplib.SMTP(self.smtp_host, self.smtp_port) as server:
             server.starttls()
             server.login(self.sender_email, self.password)

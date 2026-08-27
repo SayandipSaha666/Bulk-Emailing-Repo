@@ -1,7 +1,8 @@
 """
 main.py
-Read sheet -> skip Sent -> skip if already contacted via Gmail ->
-personalize -> send -> log -> update sheet -> print detailed summary.
+Read sheet -> group merged-cell companies -> skip Sent -> skip if already
+contacted via Gmail -> reuse or generate personalized summary -> send ->
+log -> update sheet -> print detailed summary.
 """
 
 import argparse
@@ -11,14 +12,14 @@ import yaml
 from datetime import datetime
 from dotenv import load_dotenv
 
-from sheets_client import SheetsClient
+from sheets_client import SheetsClient, group_rows_by_company
 from personalizer import Personalizer
 from email_sender import EmailSender
 from gmail_checker import GmailHistoryChecker
 
 
 def load_config(path="config.yaml") -> dict:
-    with open(path, "r") as f:
+    with open(path, "r", encoding="utf-8") as f:   # add encoding here too
         return yaml.safe_load(f)
 
 
@@ -51,64 +52,76 @@ def main():
     rows = sheets.get_rows()
     log(f"Loaded {len(rows)} rows from sheet.")
 
+    groups = group_rows_by_company(rows, cols)
+    log(f"Grouped into {len(groups)} companies.")
+
     sent_list, not_sent_list, error_list = [], [], []
 
-    for row in rows:
-        company_name = row.get(cols["company_name"], "").strip()
-        hr_name = row.get(cols["hr_name"], "").strip()
-        hr_email = row.get(cols["hr_email"], "").strip()
-        current_status = row.get(cols["status"], "").strip().lower()
-        row_number = row["_row_number"]
+    for group in groups:
+        company_name = group["company_name"]
+        row_numbers = group["row_numbers"]
+        first_row = row_numbers[0]
+        hr_name = group["hr_names"][0] if group["hr_names"] else ""
+        all_emails = group["hr_emails"]
 
-        if current_status == "sent":
-            not_sent_list.append((company_name, hr_email, "Already marked Sent in sheet"))
+        if any(s == "sent" for s in group["status_values"]):
+            not_sent_list.append((company_name, ", ".join(all_emails), "Already marked Sent"))
             continue
 
-        if not hr_email or not company_name:
-            reason = "Missing company name or HR email"
-            log(f"[SKIP] Row {row_number}: {reason}")
-            if not args.dry_run:
-                sheets.update_status(row_number, "Not Sent", error_reason=reason)
-            not_sent_list.append((company_name or "(unknown)", hr_email or "(unknown)", reason))
+        if not all_emails:
+            reason = "No valid HR email found for this company"
+            log(f"[SKIP] {company_name}: {reason}")
+            for rn in row_numbers:
+                sheets.update_status(rn, "Not Sent", error_reason=reason)
+            not_sent_list.append((company_name, "(none)", reason))
             continue
 
-        if gmail_checker.has_prior_contact(hr_email):
-            reason = "Already contacted previously (found in Sent Mail To/Cc)"
-            log(f"[SKIP] {hr_email}: {reason}")
-            if not args.dry_run:
-                sheets.update_status(row_number, "Not Sent", error_reason=reason)
-            not_sent_list.append((company_name, hr_email, reason))
+        remaining_emails = [e for e in all_emails if not gmail_checker.has_prior_contact(e)]
+
+        if not remaining_emails:
+            reason = "All recipients already contacted previously"
+            log(f"[SKIP] {company_name}: {reason}")
+            for rn in row_numbers:
+                sheets.update_status(rn, "Not Sent", error_reason=reason)
+            not_sent_list.append((company_name, ", ".join(all_emails), reason))
             continue
 
         try:
-            log(f"Researching '{company_name}' for personalization...")
-            summary = personalizer.generate_summary(company_name)
+            # ---- Reuse-or-generate summary logic ----
+            if group["existing_summary"]:
+                log(f"Using existing summary for '{company_name}' (skipping LLM call).")
+                summary = group["existing_summary"]
+            else:
+                log(f"No summary found — researching '{company_name}'...")
+                summary = personalizer.generate_summary(company_name)
+                if not args.dry_run:
+                    sheets.update_personalized_summary(first_row, summary)
 
             if args.dry_run:
-                print(f"\n--- DRY RUN PREVIEW ---\nTo: {hr_email}\nCompany: {company_name}\nSummary:\n{summary}\n")
+                print(f"\n--- DRY RUN PREVIEW ---\nTo: {remaining_emails}\nCompany: {company_name}\nSummary:\n{summary}\n")
                 continue
 
-            msg = sender.build_message(hr_email, hr_name, company_name, summary)
-            sender.send(msg, hr_email)
+            msg = sender.build_message(remaining_emails, hr_name, company_name, summary)
+            sender.send(msg, remaining_emails)
 
             sent_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            log(f"Mail sent to {hr_email} at {sent_at}")
+            log(f"Mail sent to {', '.join(remaining_emails)} at {sent_at}")
 
-            sheets.update_status(row_number, "Sent", sent_at=sent_at)
-            sent_list.append((company_name, hr_email))
+            for rn in row_numbers:
+                sheets.update_status(rn, "Sent", sent_at=sent_at)
+            sent_list.append((company_name, ", ".join(remaining_emails)))
 
             time.sleep(config["email"]["delay_between_emails_sec"])
 
         except Exception as e:
             reason = str(e)
-            log(f"[ERROR] Row {row_number} ({hr_email}): {reason}")
-            if not args.dry_run:
-                sheets.update_status(row_number, "Error", error_reason=reason)
-            error_list.append((company_name, hr_email, reason))
+            log(f"[ERROR] {company_name}: {reason}")
+            for rn in row_numbers:
+                sheets.update_status(rn, "Error", error_reason=reason)
+            error_list.append((company_name, ", ".join(all_emails), reason))
 
-    # ---------------- Final summary ----------------
     log("=" * 60)
-    log(f"RUN SUMMARY — Total rows: {len(rows)}")
+    log(f"RUN SUMMARY — Total companies: {len(groups)}")
     log(f"✅ Sent: {len(sent_list)}")
     for c, e in sent_list:
         print(f"     - {c} <{e}>")

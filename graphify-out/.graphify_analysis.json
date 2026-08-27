@@ -1,0 +1,234 @@
+{
+  "communities": {
+    "0": [
+      "personalizer",
+      "personalizer_personalizer",
+      "personalizer_personalizer_fallback",
+      "personalizer_personalizer_generate_summary",
+      "personalizer_personalizer_init",
+      "personalizer_personalizer_web_search",
+      "personalizer_rationale_1",
+      "personalizer_rationale_23"
+    ],
+    "1": [
+      "email_sender",
+      "email_sender_emailsender",
+      "email_sender_emailsender_build_message",
+      "email_sender_emailsender_init",
+      "email_sender_emailsender_send",
+      "email_sender_rationale_1",
+      "mimemultipart"
+    ],
+    "2": [
+      "gmail_checker",
+      "gmail_checker_gmailhistorychecker",
+      "gmail_checker_gmailhistorychecker_has_prior_contact",
+      "gmail_checker_gmailhistorychecker_init",
+      "sheets_client",
+      "sheets_client_get_google_credentials",
+      "sheets_client_rationale_1"
+    ],
+    "3": [
+      "readme_anthropic_api",
+      "requirements_dependencies",
+      "requirements_google_api_python_client",
+      "requirements_google_auth_httplib2",
+      "requirements_google_auth_oauthlib",
+      "requirements_groq",
+      "requirements_httpx"
+    ],
+    "4": [
+      "readme_bulk_hr_outreach_automation",
+      "requirements_duckduckgo_search",
+      "requirements_pyyaml",
+      "templates_company_name_placeholder",
+      "templates_email_template",
+      "templates_personalized_summary_placeholder",
+      "templates_sender_name_placeholder"
+    ],
+    "5": [
+      "main",
+      "main_load_config",
+      "main_log",
+      "main_main",
+      "main_rationale_1"
+    ],
+    "6": [
+      "readme_compliance",
+      "readme_design_notes",
+      "readme_idempotent_design",
+      "readme_personalization_fallback",
+      "readme_rate_limiting"
+    ],
+    "7": [
+      "sheets_client_sheetsclient",
+      "sheets_client_sheetsclient_ensure_status_columns_exist",
+      "sheets_client_sheetsclient_get_rows",
+      "sheets_client_sheetsclient_init",
+      "sheets_client_sheetsclient_update_status"
+    ],
+    "8": [
+      "readme_google_sheets_integration",
+      "readme_sheet_format",
+      "requirements_google_auth",
+      "requirements_gspread"
+    ],
+    "9": [
+      "readme_gmail_smtp",
+      "requirements_python_dotenv"
+    ]
+  },
+  "cohesion": {
+    "0": 0.32142857142857145,
+    "1": 0.3333333333333333,
+    "2": 0.38095238095238093,
+    "3": 0.2857142857142857,
+    "4": 0.3333333333333333,
+    "5": 0.6,
+    "6": 0.5,
+    "7": 0.5,
+    "8": 0.5,
+    "9": 1.0
+  },
+  "gods": [
+    {
+      "id": "requirements_dependencies",
+      "label": "Python dependencies",
+      "degree": 11
+    },
+    {
+      "id": "readme_bulk_hr_outreach_automation",
+      "label": "Bulk HR Outreach Automation",
+      "degree": 8
+    },
+    {
+      "id": "main_main",
+      "label": "main()",
+      "degree": 7
+    },
+    {
+      "id": "personalizer_personalizer",
+      "label": "Personalizer",
+      "degree": 7
+    },
+    {
+      "id": "sheets_client_sheetsclient",
+      "label": "SheetsClient",
+      "degree": 7
+    },
+    {
+      "id": "email_sender_emailsender",
+      "label": "EmailSender",
+      "degree": 6
+    },
+    {
+      "id": "gmail_checker_gmailhistorychecker",
+      "label": "GmailHistoryChecker",
+      "degree": 5
+    },
+    {
+      "id": "readme_design_notes",
+      "label": "Design notes",
+      "degree": 5
+    },
+    {
+      "id": "sheets_client_get_google_credentials",
+      "label": "get_google_credentials()",
+      "degree": 4
+    },
+    {
+      "id": "templates_email_template",
+      "label": "JGEC Campus Recruitment Email Template",
+      "degree": 4
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Anthropic API key required",
+      "target": "groq 0.11.0",
+      "source_files": [
+        "readme.md",
+        "requirements.txt"
+      ],
+      "confidence": "AMBIGUOUS",
+      "relation": "semantically_similar_to",
+      "why": "ambiguous connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "Bulk HR Outreach Automation",
+      "target": "httpx 0.27.2",
+      "source_files": [
+        "readme.md",
+        "requirements.txt"
+      ],
+      "confidence": "INFERRED",
+      "relation": "implements",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `httpx 0.27.2` unexpectedly reaches hub `Bulk HR Outreach Automation`"
+    },
+    {
+      "source": "Bulk HR Outreach Automation",
+      "target": "duckduckgo-search 6.2.13",
+      "source_files": [
+        "readme.md",
+        "requirements.txt"
+      ],
+      "confidence": "INFERRED",
+      "relation": "implements",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `duckduckgo-search 6.2.13` unexpectedly reaches hub `Bulk HR Outreach Automation`"
+    },
+    {
+      "source": "Bulk HR Outreach Automation",
+      "target": "PyYAML 6.0.2",
+      "source_files": [
+        "readme.md",
+        "requirements.txt"
+      ],
+      "confidence": "INFERRED",
+      "relation": "implements",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `PyYAML 6.0.2` unexpectedly reaches hub `Bulk HR Outreach Automation`"
+    },
+    {
+      "source": "{personalized_summary} placeholder",
+      "target": "Bulk HR Outreach Automation",
+      "source_files": [
+        "templates/email_template.txt",
+        "readme.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "rationale_for",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `{personalized_summary} placeholder` unexpectedly reaches hub `Bulk HR Outreach Automation`"
+    }
+  ],
+  "questions": [
+    {
+      "type": "ambiguous_edge",
+      "question": "What is the exact relationship between `groq 0.11.0` and `Anthropic API key required`?",
+      "why": "Edge tagged AMBIGUOUS (relation: semantically_similar_to) - confidence is low."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Python dependencies` connect `Community 3` to `Community 8`, `Community 9`, `Community 4`?",
+      "why": "High betweenness centrality (0.111) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Bulk HR Outreach Automation` connect `Community 4` to `Community 8`, `Community 3`, `Community 6`?",
+      "why": "High betweenness centrality (0.106) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Personalizer` connect `Community 0` to `Community 5`?",
+      "why": "High betweenness centrality (0.088) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 5 inferred relationships involving `Bulk HR Outreach Automation` (e.g. with `duckduckgo-search 6.2.13` and `httpx 0.27.2`) actually correct?",
+      "why": "`Bulk HR Outreach Automation` has 5 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `google-auth-oauthlib 1.2.1`, `google-auth-httplib2 0.2.0`, `google-api-python-client 2.140.0` to the rest of the system?",
+      "why": "6 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}

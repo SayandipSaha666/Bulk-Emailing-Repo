@@ -1,0 +1,1068 @@
+{
+  "nodes": [
+    {
+      "id": "email_sender",
+      "label": "email_sender.py",
+      "file_type": "code",
+      "source_file": "email_sender.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "email_sender_emailsender",
+      "label": "EmailSender",
+      "file_type": "code",
+      "source_file": "email_sender.py",
+      "source_location": "L16",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "email_sender_emailsender_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "email_sender.py",
+      "source_location": "L17",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "email_sender_emailsender_build_message",
+      "label": ".build_message()",
+      "file_type": "code",
+      "source_file": "email_sender.py",
+      "source_location": "L30",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "mimemultipart",
+      "label": "MIMEMultipart",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "email_sender_emailsender_send",
+      "label": ".send()",
+      "file_type": "code",
+      "source_file": "email_sender.py",
+      "source_location": "L48",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "email_sender_rationale_1",
+      "label": "email_sender.py Builds and sends the email via SMTP, with explicit CC addresses…",
+      "file_type": "rationale",
+      "source_file": "email_sender.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "gmail_checker",
+      "label": "gmail_checker.py",
+      "file_type": "code",
+      "source_file": "gmail_checker.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "gmail_checker_gmailhistorychecker",
+      "label": "GmailHistoryChecker",
+      "file_type": "code",
+      "source_file": "gmail_checker.py",
+      "source_location": "L5",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "gmail_checker_gmailhistorychecker_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "gmail_checker.py",
+      "source_location": "L6",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "gmail_checker_gmailhistorychecker_has_prior_contact",
+      "label": ".has_prior_contact()",
+      "file_type": "code",
+      "source_file": "gmail_checker.py",
+      "source_location": "L17",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "main",
+      "label": "main.py",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "main_load_config",
+      "label": "load_config()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L20",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "main_log",
+      "label": "log()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L25",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "main_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L30",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "main_rationale_1",
+      "label": "main.py Read sheet -> skip Sent -> skip if already contacted via Gmail ->…",
+      "file_type": "rationale",
+      "source_file": "main.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "personalizer",
+      "label": "personalizer.py",
+      "file_type": "code",
+      "source_file": "personalizer.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "personalizer_personalizer",
+      "label": "Personalizer",
+      "file_type": "code",
+      "source_file": "personalizer.py",
+      "source_location": "L14",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "personalizer_personalizer_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "personalizer.py",
+      "source_location": "L15",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "personalizer_personalizer_web_search",
+      "label": "._web_search()",
+      "file_type": "code",
+      "source_file": "personalizer.py",
+      "source_location": "L22",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "personalizer_personalizer_generate_summary",
+      "label": ".generate_summary()",
+      "file_type": "code",
+      "source_file": "personalizer.py",
+      "source_location": "L34",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "personalizer_personalizer_fallback",
+      "label": "._fallback()",
+      "file_type": "code",
+      "source_file": "personalizer.py",
+      "source_location": "L64",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "personalizer_rationale_1",
+      "label": "personalizer.py Web-searches the company (via DuckDuckGo, no API key needed)…",
+      "file_type": "rationale",
+      "source_file": "personalizer.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "personalizer_rationale_23",
+      "label": "Fetches a few real snippets about the company from DuckDuckGo.",
+      "file_type": "rationale",
+      "source_file": "personalizer.py",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "sheets_client",
+      "label": "sheets_client.py",
+      "file_type": "code",
+      "source_file": "sheets_client.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "sheets_client_get_google_credentials",
+      "label": "get_google_credentials()",
+      "file_type": "code",
+      "source_file": "sheets_client.py",
+      "source_location": "L20",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "sheets_client_sheetsclient",
+      "label": "SheetsClient",
+      "file_type": "code",
+      "source_file": "sheets_client.py",
+      "source_location": "L36",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "sheets_client_sheetsclient_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "sheets_client.py",
+      "source_location": "L37",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "sheets_client_sheetsclient_ensure_status_columns_exist",
+      "label": "._ensure_status_columns_exist()",
+      "file_type": "code",
+      "source_file": "sheets_client.py",
+      "source_location": "L46",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "sheets_client_sheetsclient_get_rows",
+      "label": ".get_rows()",
+      "file_type": "code",
+      "source_file": "sheets_client.py",
+      "source_location": "L58",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "sheets_client_sheetsclient_update_status",
+      "label": ".update_status()",
+      "file_type": "code",
+      "source_file": "sheets_client.py",
+      "source_location": "L66",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "sheets_client_rationale_1",
+      "label": "sheets_client.py Uses the SAME OAuth credentials as Gmail (one login covers…",
+      "file_type": "rationale",
+      "source_file": "sheets_client.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    }
+  ],
+  "edges": [
+    {
+      "source": "email_sender",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "email_sender.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "email_sender",
+      "target": "smtplib",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "email_sender.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "email_sender",
+      "target": "email_mime_multipart",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "email_sender.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "email_sender",
+      "target": "email_mime_text",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "email_sender.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "email_sender",
+      "target": "email_sender_emailsender",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "email_sender.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "email_sender_emailsender",
+      "target": "email_sender_emailsender_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "email_sender.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "email_sender_emailsender",
+      "target": "email_sender_emailsender_build_message",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "email_sender.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "email_sender_emailsender_build_message",
+      "target": "mimemultipart",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "email_sender.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "email_sender_emailsender",
+      "target": "email_sender_emailsender_send",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "email_sender.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "email_sender_emailsender_send",
+      "target": "mimemultipart",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "email_sender.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "email_sender_emailsender_build_message",
+      "target": "mimemultipart",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "email_sender.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "email_sender_rationale_1",
+      "target": "email_sender",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "email_sender.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "gmail_checker",
+      "target": "googleapiclient_discovery",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "gmail_checker.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "gmail_checker",
+      "target": "sheets_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "gmail_checker.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "gmail_checker",
+      "target": "gmail_checker_gmailhistorychecker",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "gmail_checker.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "gmail_checker_gmailhistorychecker",
+      "target": "gmail_checker_gmailhistorychecker_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "gmail_checker.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "gmail_checker_gmailhistorychecker",
+      "target": "gmail_checker_gmailhistorychecker_has_prior_contact",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "gmail_checker.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main",
+      "target": "argparse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main",
+      "target": "sys",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main",
+      "target": "time",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main",
+      "target": "yaml",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main",
+      "target": "dotenv",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main",
+      "target": "sheets_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main",
+      "target": "personalizer",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main",
+      "target": "email_sender",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main",
+      "target": "gmail_checker",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main",
+      "target": "main_load_config",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main",
+      "target": "main_log",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main",
+      "target": "main_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main_main",
+      "target": "main_load_config",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main_main",
+      "target": "main_log",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main_rationale_1",
+      "target": "main",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "personalizer",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "personalizer.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "personalizer",
+      "target": "groq",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "personalizer.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "personalizer",
+      "target": "duckduckgo_search",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "personalizer.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "personalizer",
+      "target": "personalizer_personalizer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "personalizer.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "personalizer_personalizer",
+      "target": "personalizer_personalizer_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "personalizer.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "personalizer_personalizer",
+      "target": "personalizer_personalizer_web_search",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "personalizer.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "personalizer_personalizer",
+      "target": "personalizer_personalizer_generate_summary",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "personalizer.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "personalizer_personalizer",
+      "target": "personalizer_personalizer_fallback",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "personalizer.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "personalizer_personalizer_generate_summary",
+      "target": "personalizer_personalizer_web_search",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "personalizer.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "personalizer_personalizer_generate_summary",
+      "target": "personalizer_personalizer_fallback",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "personalizer.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "personalizer_rationale_1",
+      "target": "personalizer",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "personalizer.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "personalizer_rationale_23",
+      "target": "personalizer_personalizer_web_search",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "personalizer.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "sheets_client",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "sheets_client.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "sheets_client",
+      "target": "gspread",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "sheets_client.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "sheets_client",
+      "target": "google_auth_transport_requests",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "sheets_client.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "sheets_client",
+      "target": "google_oauth2_credentials",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "sheets_client.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "sheets_client",
+      "target": "google_auth_oauthlib_flow",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "sheets_client.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "sheets_client",
+      "target": "sheets_client_get_google_credentials",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "sheets_client.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "sheets_client",
+      "target": "sheets_client_sheetsclient",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "sheets_client.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "sheets_client_sheetsclient",
+      "target": "sheets_client_sheetsclient_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "sheets_client.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "sheets_client_sheetsclient",
+      "target": "sheets_client_sheetsclient_ensure_status_columns_exist",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "sheets_client.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "sheets_client_sheetsclient",
+      "target": "sheets_client_sheetsclient_get_rows",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "sheets_client.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "sheets_client_sheetsclient",
+      "target": "sheets_client_sheetsclient_update_status",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "sheets_client.py",
+      "source_location": "L66",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "sheets_client_sheetsclient_init",
+      "target": "sheets_client_get_google_credentials",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "sheets_client.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "sheets_client_sheetsclient_init",
+      "target": "sheets_client_sheetsclient_ensure_status_columns_exist",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "sheets_client.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "sheets_client_rationale_1",
+      "target": "sheets_client",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "sheets_client.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "gmail_checker",
+      "target": "sheets_client_get_google_credentials",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "gmail_checker.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main",
+      "target": "sheets_client_sheetsclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main",
+      "target": "personalizer_personalizer",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main",
+      "target": "email_sender_emailsender",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main",
+      "target": "gmail_checker_gmailhistorychecker",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main_main",
+      "target": "sheets_client_sheetsclient",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main_main",
+      "target": "gmail_checker_gmailhistorychecker",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main_main",
+      "target": "personalizer_personalizer",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main_main",
+      "target": "email_sender_emailsender",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "main_main",
+      "target": "sheets_client_sheetsclient",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "main.py",
+      "source_location": "L40",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "main_main",
+      "target": "personalizer_personalizer",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "main.py",
+      "source_location": "L46",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "main_main",
+      "target": "email_sender_emailsender",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "main.py",
+      "source_location": "L49",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "main_main",
+      "target": "gmail_checker_gmailhistorychecker",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "main.py",
+      "source_location": "L43",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "gmail_checker_gmailhistorychecker_init",
+      "target": "sheets_client_get_google_credentials",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "gmail_checker.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "failed_sources": []
+}

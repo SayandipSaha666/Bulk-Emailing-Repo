@@ -1,0 +1,10 @@
+gspread==6.1.2
+google-auth==2.32.0
+google-auth-oauthlib==1.2.1
+google-auth-httplib2==0.2.0
+google-api-python-client==2.140.0
+groq==0.11.0
+httpx==0.27.2
+duckduckgo-search==6.2.13
+PyYAML==6.0.2
+python-dotenv==1.0.1

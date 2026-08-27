@@ -1,0 +1,5 @@
+.env
+.venv
+config.yaml
+gmail_credentials.json
+google_token.json

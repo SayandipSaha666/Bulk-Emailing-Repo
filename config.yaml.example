@@ -1,0 +1,43 @@
+google_sheets:
+  spreadsheet_id: "sheet_id"
+  worksheet_name: "Sheet1"
+
+  columns:
+    company_name: "Company Name"
+    hr_name: "HR Name"
+    hr_email: "HR Email"
+    hr_contact: "HR Contact Number"
+    hr_linkedin: "HR LinkedIn"
+    status: "Status"
+    sent_at: "Sent At"
+    error_reason: "Error Reason"        # NEW
+
+# NEW SECTION — Gmail inbox/sent history check
+gmail_history_check:
+  enabled: true
+  credentials_file: "gmail_credentials.json" # put your gamil-credentials_file download it from console.cloud.google.com
+  token_file: "gmail_token.json"
+  # your own address is pulled automatically from email.sender_email below —
+  # no need to repeat it here
+
+personalization:
+  provider: "groq"
+  model: "openai/gpt-oss-120b"   # good balance of speed + quality on Groq
+  max_tokens: 300
+  web_search_results: 3              # how many DuckDuckGo snippets to feed the model
+
+email:
+  smtp_host: "smtp.gmail.com"
+  smtp_port: 587
+  sender_email: "sender@gmail.com" # put the sender email address here
+  sender_name: "Sayandip Saha"
+  cc_emails:
+    - "ss2709@it.jgec.ac.in" # put mail ids you want to add as CC
+  subject_template: "Inviting {company_name} to Participate in JGEC Campus Recruitment Drive – Batch of 2027"
+  template_file: "templates/email_template.txt"
+  delay_between_emails_sec: 8
+
+candidate_pitch:
+  summary: >
+    . We believe our students from Computer Science & Engineering, Information Technology, Electronics and Communication Engineering, and other circuit branches 
+    possess the technical knowledge across backend systems, ML product development, and full-stack product development., analytical skills, and enthusiasm to contribute effectively to your organization.

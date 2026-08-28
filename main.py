@@ -12,7 +12,7 @@ import yaml
 from datetime import datetime
 from dotenv import load_dotenv
 
-from sheets_client import SheetsClient, group_rows_by_company
+from sheets_client import SheetsClient, group_rows_by_company, get_google_credentials
 from personalizer import Personalizer
 from email_sender import EmailSender
 from gmail_checker import GmailHistoryChecker
@@ -47,7 +47,8 @@ def main():
     personalizer = Personalizer(config)
 
     if not args.dry_run:
-        sender = EmailSender(config)
+        creds = get_google_credentials(config["gmail_history_check"]["credentials_file"])
+        sender = EmailSender(config, creds)
 
     rows = sheets.get_rows()
     log(f"Loaded {len(rows)} rows from sheet.")

@@ -1,28 +1,28 @@
 """
 email_sender.py
-Builds and sends the email via SMTP as HTML (for bold/highlighted text),
+Builds and sends the email via the Gmail API (OAuth) as HTML,
 supporting multiple TO recipients and explicit CC addresses.
 """
 
-import os
-import smtplib
+import base64
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from googleapiclient.discovery import build
 
 
 class EmailSender:
-    def __init__(self, config: dict):
+    def __init__(self, config: dict, creds):
         email_cfg = config["email"]
-        self.smtp_host = email_cfg["smtp_host"]
-        self.smtp_port = email_cfg["smtp_port"]
         self.sender_email = email_cfg["sender_email"]
         self.sender_name = email_cfg["sender_name"]
         self.cc_emails = email_cfg["cc_emails"]
         self.subject_template = email_cfg["subject_template"]
-        self.password = os.environ["EMAIL_APP_PASSWORD"]
 
         with open(email_cfg["template_file"], "r", encoding="utf-8") as f:
             self.template = f.read()
+
+        # Gmail API service, built from the SAME creds used for Sheets
+        self.service = build("gmail", "v1", credentials=creds)
 
     def build_message(self, to_emails: list, hr_name: str, company_name: str,
                        personalized_summary: str) -> MIMEMultipart:
@@ -39,12 +39,10 @@ class EmailSender:
         msg["To"] = ", ".join(to_emails)
         msg["Cc"] = ", ".join(self.cc_emails)
         msg["Subject"] = subject
-        msg.attach(MIMEText(html_body, "html", "utf-8"))   # "html" instead of "plain"
+        msg.attach(MIMEText(html_body, "html", "utf-8"))
         return msg
 
     def send(self, msg: MIMEMultipart, to_emails: list):
-        all_recipients = to_emails + self.cc_emails
-        with smtplib.SMTP(self.smtp_host, self.smtp_port) as server:
-            server.starttls()
-            server.login(self.sender_email, self.password)
-            server.sendmail(self.sender_email, all_recipients, msg.as_string())
+        raw = base64.urlsafe_b64encode(msg.as_bytes()).decode("utf-8")
+        body = {"raw": raw}
+        self.service.users().messages().send(userId="me", body=body).execute()

@@ -3,3 +3,4 @@
 config.yaml
 gmail_credentials.json
 google_token.json
+graphify-out/

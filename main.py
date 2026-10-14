@@ -64,6 +64,7 @@ def main():
         first_row = row_numbers[0]
         hr_name = group["hr_names"][0] if group["hr_names"] else ""
         all_emails = group["hr_emails"]
+        pending_updates = []
 
         if any(s == "sent" for s in group["status_values"]):
             not_sent_list.append((company_name, ", ".join(all_emails), "Already marked Sent"))
@@ -73,7 +74,8 @@ def main():
             reason = "No valid HR email found for this company"
             log(f"[SKIP] {company_name}: {reason}")
             for rn in row_numbers:
-                sheets.update_status(rn, "Not Sent", error_reason=reason)
+                pending_updates.append({"row_number": rn, "status": "Not Sent", "error_reason": reason})
+            sheets.update_statuses(pending_updates)
             not_sent_list.append((company_name, "(none)", reason))
             continue
 
@@ -83,7 +85,8 @@ def main():
             reason = "All recipients already contacted previously"
             log(f"[SKIP] {company_name}: {reason}")
             for rn in row_numbers:
-                sheets.update_status(rn, "Not Sent", error_reason=reason)
+                pending_updates.append({"row_number": rn, "status": "Not Sent", "error_reason": reason})
+            sheets.update_statuses(pending_updates)
             not_sent_list.append((company_name, ", ".join(all_emails), reason))
             continue
 
@@ -109,7 +112,8 @@ def main():
             log(f"Mail sent to {', '.join(remaining_emails)} at {sent_at}")
 
             for rn in row_numbers:
-                sheets.update_status(rn, "Sent", sent_at=sent_at)
+                pending_updates.append({"row_number": rn, "status": "Sent", "sent_at": sent_at})
+            sheets.update_statuses(pending_updates)
             sent_list.append((company_name, ", ".join(remaining_emails)))
 
             time.sleep(config["email"]["delay_between_emails_sec"])
@@ -118,7 +122,8 @@ def main():
             reason = str(e)
             log(f"[ERROR] {company_name}: {reason}")
             for rn in row_numbers:
-                sheets.update_status(rn, "Error", error_reason=reason)
+                pending_updates.append({"row_number": rn, "status": "Error", "error_reason": reason})
+            sheets.update_statuses(pending_updates)
             error_list.append((company_name, ", ".join(all_emails), reason))
 
     log("=" * 60)

@@ -122,14 +122,50 @@ class SheetsClient:
             rows.append(record)
         return rows
 
-    def update_status(self, row_number: int, status: str, sent_at: str = "", error_reason: str = ""):
+    def update_statuses(self, updates: list[dict]):
+        if not updates:
+            return
+
         status_col = self.header.index(self.columns["status"]) + 1
-        self.worksheet.update_cell(row_number, status_col, status)
-        if sent_at:
-            sent_at_col = self.header.index(self.columns["sent_at"]) + 1
-            self.worksheet.update_cell(row_number, sent_at_col, sent_at)
+        sent_at_col = self.header.index(self.columns["sent_at"]) + 1
         error_col = self.header.index(self.columns["error_reason"]) + 1
-        self.worksheet.update_cell(row_number, error_col, error_reason)
+
+        batch = []
+        for item in updates:
+            row_number = item["row_number"]
+            if "status" in item:
+                batch.append({
+                    "range": f"{self._column_letter(status_col)}{row_number}",
+                    "values": [[item["status"]]],
+                })
+            if item.get("sent_at"):
+                batch.append({
+                    "range": f"{self._column_letter(sent_at_col)}{row_number}",
+                    "values": [[item["sent_at"]]],
+                })
+            if "error_reason" in item:
+                batch.append({
+                    "range": f"{self._column_letter(error_col)}{row_number}",
+                    "values": [[item["error_reason"]]],
+                })
+
+        if batch:
+            self.worksheet.batch_update(batch)
+
+    def _column_letter(self, col_num: int) -> str:
+        letters = ""
+        while col_num:
+            col_num, rem = divmod(col_num - 1, 26)
+            letters = chr(65 + rem) + letters
+        return letters
+
+    def update_status(self, row_number: int, status: str, sent_at: str = "", error_reason: str = ""):
+        self.update_statuses([{
+            "row_number": row_number,
+            "status": status,
+            "sent_at": sent_at,
+            "error_reason": error_reason,
+        }])
 
     def update_personalized_summary(self, row_number: int, summary: str):
         col = self.header.index(self.columns["personalized_summary"]) + 1
